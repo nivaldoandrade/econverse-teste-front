@@ -6,6 +6,8 @@
   position: relative;
   display: flex;
   min-height: 282px;
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 61px 80px 0;
 }
 
@@ -53,12 +55,12 @@
 .columns {
   display: flex;
   gap: 99px;
-  margin-top: 22px;
+  margin-top: 24px;
   margin-left: 180px;
 }
 
 .columnTitle {
-  color: var(--gray-900);
+  color: rgba(34, 34, 34, 0.71);
   font-size: 16px;
   font-weight: 700;
   line-height: 16px;
@@ -71,7 +73,8 @@
   margin-top: 20px;
 
   a {
-    color: var(--gray-900);
+    display: block;
+    color: rgba(34, 34, 34, 0.71);
     font-family: var(--font-alt);
     font-size: 14px;
     font-weight: 400;

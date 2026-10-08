@@ -1,14 +1,19 @@
 .section {
+  min-height: 162px;
+  margin-top: 90px;
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.inner {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 40px;
   width: 100%;
-  min-height: 162px;
-  margin-top: 90px;
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 40px 82px 0 80px;
-  background-color: var(--purple);
-  color: var(--white);
 }
 
 .title {
@@ -107,7 +112,7 @@
 }
 
 @media (max-width: 1100px) {
-  .section {
+  .inner {
     flex-direction: column;
     padding: 40px 40px;
   }
@@ -125,7 +130,7 @@
 }
 
 @media (max-width: 640px) {
-  .section {
+  .inner {
     padding: 32px 24px;
   }
 
