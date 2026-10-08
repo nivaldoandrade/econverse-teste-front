@@ -1,0 +1,154 @@
+.footer {
+  background-color: var(--bg-gray);
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  min-height: 282px;
+  padding: 61px 80px 0;
+}
+
+.about {
+  width: 354px;
+}
+
+.logo {
+  width: 164px;
+  height: 48px;
+}
+
+.aboutText {
+  margin-top: 18px;
+  color: var(--gray-700);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+}
+
+.socials {
+  display: flex;
+  gap: 26px;
+  margin-top: 28px;
+
+  a {
+    display: flex;
+    transition: opacity 0.2s;
+  }
+
+  a:hover {
+    opacity: 0.7;
+  }
+}
+
+.divider {
+  position: absolute;
+  top: 42px;
+  left: 523px;
+  width: 1px;
+  height: 198px;
+  background-color: rgba(40, 40, 40, 0.18);
+}
+
+.columns {
+  display: flex;
+  gap: 99px;
+  margin-top: 22px;
+  margin-left: 180px;
+}
+
+.columnTitle {
+  color: var(--gray-900);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.columnList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+
+  a {
+    color: var(--gray-900);
+    font-family: var(--font-alt);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: var(--blue);
+  }
+}
+
+.bottomBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 47px;
+  background-color: var(--white);
+
+  p {
+    color: var(--gray-700);
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1100px) {
+  .inner {
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .columns {
+    gap: 48px;
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+
+  .about {
+    width: 100%;
+    max-width: 354px;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner {
+    padding: 32px 24px;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .columns {
+    gap: 32px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .columnList {
+    align-items: center;
+  }
+
+  .bottomBar p {
+    padding: 0 16px;
+    font-size: 12px;
+  }
+}

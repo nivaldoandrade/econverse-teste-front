@@ -1,0 +1,22 @@
+.page {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.feedback,
+.feedbackError {
+  margin: 60px auto 0;
+  padding: 0 16px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+}
+
+.feedback {
+  color: var(--gray-500);
+}
+
+.feedbackError {
+  color: #c0392b;
+}

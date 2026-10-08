@@ -1,0 +1,219 @@
+.section {
+  width: calc(100% - 76px);
+  max-width: 1364px;
+  margin: 90px auto 0;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  max-width: 1138px;
+  margin: 0 auto;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  margin-bottom: 10px;
+  background-color: var(--gray-200);
+}
+
+.title {
+  color: var(--blue);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 45px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.seeAll {
+  display: block;
+  width: fit-content;
+  height: 23px;
+  margin: 4px auto 0;
+  color: var(--gray-700);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 22.5px;
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  width: 1280px;
+  max-width: 100%;
+  margin: 4px auto 0;
+}
+
+.tab,
+.tabActive {
+  flex: 1;
+  height: 40px;
+  margin-left: -1px;
+  border: 1px solid var(--gray-300);
+  background-color: var(--white);
+  color: var(--gray-800);
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.tab:first-child {
+  margin-left: 0;
+}
+
+.tab:hover {
+  color: var(--blue);
+}
+
+.tabActive {
+  position: relative;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.carouselTabs,
+.carouselSeeAll {
+  display: flex;
+  align-items: center;
+}
+
+.carouselTabs {
+  margin-top: 24px;
+}
+
+.carouselSeeAll {
+  margin-top: 25px;
+}
+
+.viewport {
+  flex: 1;
+  overflow-x: auto;
+  padding: 24px 20px;
+  margin: -24px -20px;
+  scroll-padding-left: 20px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  cursor: grab;
+
+  &.dragging {
+    cursor: grabbing;
+    user-select: none;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.track {
+  display: flex;
+  gap: 18px;
+}
+
+.track::after {
+  content: '';
+  flex: 0 0 3px;
+}
+
+.item {
+  flex: 0 0 304px;
+  scroll-snap-align: start;
+}
+
+.carouselTabs > button:first-child,
+.carouselSeeAll > button:first-child {
+  margin-right: 14px;
+}
+
+.carouselTabs > button:last-child,
+.carouselSeeAll > button:last-child {
+  margin-left: 15px;
+}
+
+@media (max-width: 1438px) {
+  .item {
+    flex: 0 0 calc((100% - 36px) / 3);
+  }
+}
+
+@media (max-width: 992px) {
+  .section {
+    width: calc(100% - 40px);
+  }
+
+  .item {
+    flex: 0 0 calc((100% - 18px) / 2);
+  }
+
+  .heading {
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .tab,
+  .tabActive {
+    flex: 0 0 auto;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    width: calc(100% - 32px);
+  }
+
+  .viewport {
+    padding: 24px 16px;
+    margin: -24px -16px;
+    scroll-padding-left: 16px;
+  }
+
+  .carouselTabs,
+  .carouselSeeAll {
+    position: relative;
+    padding: 0;
+  }
+
+  .item {
+    flex: 0 0 100%;
+  }
+
+  .carouselTabs > button:first-child,
+  .carouselSeeAll > button:first-child {
+    position: absolute;
+    top: 30%;
+    left: 4px;
+    margin-right: 0;
+    transform: translateY(-50%);
+  }
+
+  .carouselTabs > button:last-child,
+  .carouselSeeAll > button:last-child {
+    position: absolute;
+    top: 30%;
+    right: 4px;
+    margin-left: 0;
+    transform: translateY(-50%);
+  }
+}

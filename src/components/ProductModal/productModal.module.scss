@@ -1,0 +1,266 @@
+.overlay,
+.overlayClosing {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: var(--overlay);
+  animation: overlayIn 0.2s ease-out;
+}
+
+.overlayClosing {
+  animation: overlayOut 0.2s ease-in forwards;
+}
+
+.modal {
+  position: relative;
+  width: 769px;
+  max-width: 100%;
+  height: 299px;
+  border-radius: 6px;
+  background-color: var(--white);
+  animation: modalIn 0.2s ease-out;
+}
+
+.overlayClosing .modal {
+  animation: modalOut 0.2s ease-in forwards;
+}
+
+.close {
+  position: absolute;
+  top: 17px;
+  right: 29px;
+  width: 20px;
+  height: 20px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 2px;
+    background-color: #707070;
+    content: '';
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 56px;
+  left: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 247px;
+  height: 192px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
+
+.info {
+  position: absolute;
+  top: 63px;
+  left: 390px;
+  width: 328px;
+}
+
+.title {
+  color: var(--gray-700);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.price {
+  margin-top: 15px;
+  color: var(--gray-700);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.description {
+  display: -webkit-box;
+  width: 290px;
+  height: 36px;
+  margin-top: 29px;
+  overflow: hidden;
+  color: var(--gray-400);
+  font-family: var(--font-alt);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 15px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.detailsLink {
+  display: block;
+  width: max-content;
+  margin-top: 0;
+  color: var(--blue);
+  font-family: var(--font-alt);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 11px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 31px;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 110px;
+  height: 36px;
+  padding: 0 10px 0 9px;
+  border: 1px solid var(--gray-100);
+  border-radius: 4px;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: var(--purple);
+    font-size: 18px;
+    line-height: 1;
+
+    &:disabled {
+      color: var(--gray-400);
+      cursor: not-allowed;
+    }
+  }
+
+  span {
+    color: var(--purple);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+}
+
+.buyButton {
+  width: 188px;
+  height: 36px;
+  border-radius: 6px;
+  background-color: var(--yellow);
+  color: var(--purple);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  text-transform: uppercase;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes overlayOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modalOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+@media (max-width: 800px) {
+  .modal {
+    height: auto;
+    padding: 24px;
+  }
+
+  .imageWrapper,
+  .info {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+
+  .imageWrapper {
+    margin: 24px auto 0;
+  }
+
+  .info {
+    margin-top: 16px;
+  }
+
+  .title {
+    padding-right: 32px;
+  }
+
+  .description {
+    height: auto;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+  }
+
+  .buyButton {
+    flex: 1;
+  }
+}
