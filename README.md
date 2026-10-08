@@ -8,7 +8,7 @@ Este repositório é um [fork de EconverseAG/teste-front-end](https://github.com
 
 ## Demonstração
 
-**Web:** [econverso.nivaldoandrade.dev.br](https://econverso.nivaldoandrade.dev.br/)
+**Web:** [econverse.nivaldoandrade.dev.br](https://econverse.nivaldoandrade.dev.br/)
 
 ## Funcionalidades
 
